@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: recharge-validator
+  cloud:
+    config:
+      name: recharge-validator
+---
+spring:
+  application:
+    name: recharge-validator
+  config:
+    activate:
+      on-profile: dev
+    import: optional:configserver:http://localhost:8080/
+  cloud:
+    config:
+      name: recharge-validator
+      username: mirante
+      password: mirante@123
